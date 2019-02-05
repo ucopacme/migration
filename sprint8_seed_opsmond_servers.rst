@@ -1,4 +1,4 @@
-Preparing Opsmon DEV environment for migration
+Preparing Opsmon DEV environment for Migration
 ==============================================
 
 The process of migrating the VMware virtual machines from SDSC to LDC@AWS will use the service called SMS (Server Migration Service)
