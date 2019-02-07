@@ -1,6 +1,22 @@
 Test Cases for OS Validation: Linux
 ===================================
 
+DNS configuration
+-----------------
+
+  nslookup <hostname>
+  nslookup <hostname>.ucop.edu
+  nslookup <hostname>.ldc.devops.ucop.edu
+
+
+ssh access
+----------
+
+verify host is accessible over ssh::
+
+  ssh <my_user_name>@<hostname>
+
+
 reboot
 ------
 
@@ -22,10 +38,12 @@ verify network configuration and routing::
   ip route
 
 
-domainname resolution
----------------------
+resolver
+--------
 
-verify DNS resolver is configured correctly
+verify DNS resolver is configured correctly::
+
+  cat /etc/resolv.conf
 
 verify host resolves names in various domains:
 
@@ -63,15 +81,6 @@ verify iptables rules on host::
 
   sudo iptables -L -vn
 
-
-ssh access
-----------
-
-verify host is accessible over ssh::
-
-  ssh <my_user_name>@<hostname>
-
-
 AD access (centrify)
 --------------------
 
@@ -94,7 +103,9 @@ remote logging
 
 verify logs are syncing to central log host::
 
-  ? 
+  sudo cat /etc/rsyslog.d/remote.conf
+  sudo netstat -taupn | grep syslog
+
 
 backups
 -------
