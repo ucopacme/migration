@@ -1,0 +1,56 @@
+{
+  "Changes": [
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "new-d-its-ca07.ldc.devops.ucop.edu",
+        "Type": "A",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "10.48.76.208"
+          }
+        ]
+      }
+    },
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "old-d-its-ca07.ldc.devops.ucop.edu",
+        "Type": "A",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "128.48.76.208"
+          }
+        ]
+      }
+    },
+    {
+      "Action": "DELETE",
+      "ResourceRecordSet": {
+         "Name": "d-its-ca07.ldc.devops.ucop.edu.",
+         "Type": "A",
+         "TTL": 300,
+         "ResourceRecords": [
+             {
+                 "Value": "10.48.76.208"
+             }
+         ]
+      }
+    },
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "d-its-ca07.ldc.devops.ucop.edu",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "new-d-its-ca07.ldc.devops.ucop.edu"
+          }
+        ]
+      }
+    }
+  ]
+}

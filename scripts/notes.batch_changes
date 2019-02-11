@@ -1,0 +1,13 @@
+(python3.6) agould@horus:~/git-repos/github/ucopacme/migration/scripts> aws route53 change-resource-record-sets --hosted-zone-id ZCQKKPHNSNK5R --change-batch file://./change_batch.json
+{
+    "ChangeInfo": {
+        "Id": "/change/C1YJEHXN6J1VJM",
+        "Status": "PENDING",
+        "SubmittedAt": "2019-02-08T21:25:30.388Z"
+    }
+}
+
+
+new-opsmond01.ldc.devops.ucop.edu A 10.48.76.164
+old-opsmond01.ldc.devops.ucop.edu A 128.48.76.164
+opsmond01.ldc.devops.ucop.edu CNAME new-opsmond01.ldc.devops.ucop.edu

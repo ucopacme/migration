@@ -1,0 +1,61 @@
+{
+  "Changes": [
+
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "opsmond01.ldc.devops.ucop.edu",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "new-opsmond01.ldc.devops.ucop.edu"
+          }
+        ]
+      }
+    },
+
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "opsmond02.ldc.devops.ucop.edu",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "new-opsmond02.ldc.devops.ucop.edu"
+          }
+        ]
+      }
+    },
+
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "opsmond03.ldc.devops.ucop.edu",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "new-opsmond03.ldc.devops.ucop.edu"
+          }
+        ]
+      }
+    },
+
+    {
+      "Action": "UPSERT",
+      "ResourceRecordSet": {
+        "Name": "d-its-ca07.ldc.devops.ucop.edu",
+        "Type": "CNAME",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "new-d-its-ca07.ldc.devops.ucop.edu"
+          }
+        ]
+      }
+    }
+
+  ]
+}
