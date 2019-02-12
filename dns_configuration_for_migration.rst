@@ -33,6 +33,13 @@ ucop.edu (Infoblox)
 - recreate <hostname>.ucop.edu as CNAME record pointing to <hostname>.ldc.devop.ucop.edu
 
 
+Cutover
+-------
+
+In ldc.devops.ucop.edu Route53 Hostedzone:
+
+- change CNAME record <hostname>.ldc.devop.ucop.edu to point to new-<hostname>.ldc.devop.ucop.edu
+
 Example
 *******
 
@@ -53,13 +60,6 @@ Example
   opsmond01.ldc.devops.ucop.edu is an alias for new-opsmond01.ldc.devops.ucop.edu.
   new-opsmond01.ldc.devops.ucop.edu has address 10.48.76.164
 
-
-Cutover
--------
-
-In ldc.devops.ucop.edu Route53 Hostedzone:
-
-- change CNAME record <hostname>.ldc.devop.ucop.edu to point to new-<hostname>.ldc.devop.ucop.edu
 
 Failback
 --------
