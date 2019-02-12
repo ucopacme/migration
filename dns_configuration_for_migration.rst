@@ -18,8 +18,8 @@ ldc.devops.ucop.edu (Route53 Hostedzone)
 
 create 2 A records:
 
-- old-<hostnmae>.ldc.devop.ucop.edu set to IP address in SDSC
-- new-<hostnmae>.ldc.devop.ucop.edu set to IP address in AWS VPC
+- old-<hostname>.ldc.devop.ucop.edu set to IP address in SDSC
+- new-<hostname>.ldc.devop.ucop.edu set to IP address in AWS VPC
 
 create 1 CNAME record:
 
