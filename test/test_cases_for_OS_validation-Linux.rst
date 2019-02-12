@@ -4,9 +4,12 @@ Test Cases for OS Validation: Linux
 DNS configuration
 -----------------
 
-  nslookup <hostname>
-  nslookup <hostname>.ucop.edu
+verify DNS is configured for pre-cutover::
+
+  nslookup new-<hostname>.ldc.devops.ucop.edu
+  nslookup old-<hostname>.ldc.devops.ucop.edu
   nslookup <hostname>.ldc.devops.ucop.edu
+  nslookup <hostname>.ucop.edu
 
 
 ssh access
@@ -14,7 +17,8 @@ ssh access
 
 verify host is accessible over ssh::
 
-  ssh <my_user_name>@<hostname>
+  ssh <my_user_name>@old-<hostname>
+  ssh <my_user_name>@new-<hostname>
 
 
 reboot
@@ -49,7 +53,7 @@ verify host resolves names in various domains:
 
 - ldc::
 
-  host unxpupp02.ucop.edu
+  host unxpupp02.ldc.devops.ucop.edu
 
 
 - on-prem::
@@ -64,13 +68,9 @@ verify host resolves names in various domains:
 hostname
 --------
 
-verify fully quilified domain name matches DNS A record::
+verify fully quilified domain and short hostname are set properly::
 
   hostname -f
-  dig $(hostname -f)
-
-verify short hostname set properly::
-
   hostname
 
 
@@ -80,6 +80,7 @@ base firewall rules
 verify iptables rules on host::
 
   sudo iptables -L -vn
+
 
 AD access (centrify)
 --------------------
@@ -94,7 +95,7 @@ puppet
 
 verify puppet is configurd and running properly::
 
-  sudo tail /var/log/puppet/puppet.log
+  sudo tail -2 /var/log/puppet/puppet.log
   sudo puppet agent -t --noop
 
 
@@ -103,7 +104,7 @@ remote logging
 
 verify logs are syncing to central log host::
 
-  sudo cat /etc/rsyslog.d/remote.conf
+  sudo grep -v ^# /etc/rsyslog.d/remote.conf
   sudo netstat -taupn | grep syslog
 
 
@@ -121,6 +122,6 @@ monitoring
 
 verify monitoring agent is communicating with servers::
 
-  sudo service nimbus status
+  ps aux| grep nimbus
   tail /apps/CA/uim/robot/controller.log
 
